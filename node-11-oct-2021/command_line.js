@@ -66,7 +66,7 @@ switch (calcAction) {
     console.log(max);
     break;
   case `min`:
-    const max = arrayOfNUms.reduce((a, b) => {
+    const min = arrayOfNUms.reduce((a, b) => {
       return Math.min(a, b);
     });
     console.log(max);
