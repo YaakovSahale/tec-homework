@@ -24,65 +24,73 @@ const productsJson = JSON.stringify(products);
 const server = http.createServer((req, res) => {
   switch (req.url) {
     case `/`:
-        fs.readFile(`./index.html`, `utf-8`, (err, data)=>{
-            if(err){
-                res.write(JSON.stringify(err))
-                console.log(err);
-            }
-            else{
-                res.write(data)
-            }
-            res.end()
-        })
+      fs.readFile(`./index.html`, `utf-8`, (err, data) => {
+        if (err) {
+          res.write(JSON.stringify(err));
+          console.log(err);
+        } else {
+          res.write(data);
+        }
+        res.end();
+      });
+      break;
+
+    case `/css/style.css`:
+      fs.readFile(`/css/style.css`, `utf-8`, (err, data) => {
+        if (err) {
+          res.write(JSON.stringify(err));
+          console.log(err);
+        } else {
+          res.write(data);
+        }
+        res.end();
+      });
       break;
 
     case `/about`:
-        fs.readFile(`./about.html`, `utf-8`, (err, data)=>{
-            if(err){
-                res.write(JSON.stringify(err))
-                console.log(err);
-            }
-            else{
-                res.write(data)
-            }
-            res.end()
-        })
+      fs.readFile(`./about.html`, `utf-8`, (err, data) => {
+        if (err) {
+          res.write(JSON.stringify(err));
+          console.log(err);
+        } else {
+          res.write(data);
+        }
+        res.end();
+      });
       break;
 
     case `/sales`:
-        fs.readFile(`./sales.html`, `utf-8`, (err, data)=>{
-            if(err){
-                res.write(JSON.stringify(err))
-                console.log(err);
-            }
-            else{
-                res.write(data)
-            }
-            res.end()
-        })
+      fs.readFile(`./sales.html`, `utf-8`, (err, data) => {
+        if (err) {
+          res.write(JSON.stringify(err));
+          console.log(err);
+        } else {
+          res.write(data);
+        }
+        res.end();
+      });
       break;
 
     case `/products`:
-        res.write(JSON.stringify(products),(err)=>{
-            res.writeHead(404)
-            res.write(err)
-        })
-        console.log("djfhdksjfhkgsdj")
+      res.write(JSON.stringify(products), (err) => {
+        res.writeHead(404);
+        res.write(err);
+        res.end();
+      });
       break;
 
     case `/product`:
-        res.write(JSON.stringify(products[0]),(err)=>{
-            res.writeHead(404)
-            res.write(err)
-        })
+      res.write(JSON.stringify(products[0]), (err) => {
+        res.writeHead(404);
+        res.write(err);
+        res.end();
+      });
       break;
 
     default:
-        res.write(err)
+      res.write(err);
       break;
   }
-  res.end()
 });
-
 
 server.listen(2000);
