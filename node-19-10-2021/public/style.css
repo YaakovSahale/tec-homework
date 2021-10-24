@@ -1,0 +1,55 @@
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0%;
+  padding: 0%;
+}
+
+ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+h1 {
+  color: darkgoldenrod;
+  text-align: center;
+}
+
+.bodyContainer {
+  width: 100vw;
+  height: 60vh;
+  background-color: rgb(181, 200, 235);
+  padding: 1%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tabContainer{
+  width: 35%;
+  height: 85%;
+  background-color: darkgray;
+}
+
+
+
+
+
+
+footer {
+  display: flex;
+  align-items: center;
+}
+
+.copyright {
+  width: 2%;
+  height: 2%;
+}
+
+
+
+
+
+
+
+
