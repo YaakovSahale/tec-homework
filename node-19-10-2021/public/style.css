@@ -29,6 +29,10 @@ h1 {
   width: 35%;
   height: 85%;
   background-color: darkgray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 
