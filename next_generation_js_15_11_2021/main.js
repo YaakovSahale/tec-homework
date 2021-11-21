@@ -7,6 +7,12 @@ for (let i = 0; i < 1000; i++) {
   arr[i] = i;
 }
 
+
+
+
+
+
+
 // let sqrt = arr.map((num) => Math.sqrt(num).toFixed(1));
 // console.log(sqrt);
 //!..............................3
