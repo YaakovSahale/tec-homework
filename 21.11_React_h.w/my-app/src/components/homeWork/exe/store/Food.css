@@ -1,0 +1,23 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+
+.foodImg {
+  width: 10%;
+  height: auto;
+}
+
+.foodDiv {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.foodImgAndTitle {
+  text-align: left;
+  padding-bottom: 7%;
+}
+
+.foodTab{
+    padding: 7%;
+}
