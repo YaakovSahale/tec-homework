@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       {/* <TwoCounters/> */}
-      {/* <LongText text={"hello it`s me"}/> */}
+      {/* <LongText text={"123456789"}/> */}
       <ShowHIde text={"i was wondering if after all this years"}/>
     </div>
   );

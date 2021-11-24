@@ -1,14 +1,17 @@
 import { Component } from "react";
 
 export default class ShowHIde extends Component {
-    state = {exist: 'inline-block'}
-    hideAndShowText=()=>{
-        this.setState({exist : this.state.exist === 'none' ? 'inline-block':'none'})
-    }
+  state = { exist: "100" };
+  hideAndShowText = () => {
+    this.setState({ exist: this.state.exist === "0" ? "100" : "0" });
+  };
   render() {
+    const { exist } = this.state;
+    const { text } = this.props;
     return (
       <div>
-        <p style={{display : this.state.exist}}>{this.props.text}</p><br></br>
+        <p style={{ opacity: exist }}>{text}</p>
+        <br></br>
         <button onClick={this.hideAndShowText}>show/hide</button>
       </div>
     );

@@ -1,13 +1,10 @@
-import { Component } from "react";
+const LongText = ({ text }) => {
+  const textColor = text.length > 5 ? "red" : "green";
+  return (
+    <div>
+      <h2 style={{ color: textColor }}>{text}</h2>
+    </div>
+  );
+};
 
-export default class LongText extends Component {
-  render() {
-    let textColor = this.props.text.length > 5 ? "red" : "green";
-    return (
-      <div>
-        <h2 style={{ color: textColor }}>{this.props.text}</h2>
-      </div>
-    );
-  }
-}
-
+export default LongText;
