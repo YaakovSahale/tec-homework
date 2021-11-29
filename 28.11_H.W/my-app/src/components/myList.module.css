@@ -1,0 +1,11 @@
+.container{
+    width: 50vw;
+    height: 60vh;
+    background-color: rgb(145 201 233);
+    border-radius: 12px;
+    overflow-y: scroll;
+}
+
+/* .title{
+    text-decoration: line-through;
+} */
