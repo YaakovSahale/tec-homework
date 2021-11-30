@@ -6,7 +6,7 @@ export default class TableData extends Component {
     posts: [],
     title: "",
     body: "",
-    postId: "",
+    postId: null,
   };
 
   componentDidMount() {
@@ -16,15 +16,19 @@ export default class TableData extends Component {
       .then((data) => this.setState({ posts: data }));
   }
 
+  componentDidUpdate() {
+
+  }
+
   render() {
     const { posts } = this.state;
-    let tempPosts = this.state.posts;
+    const tempPosts = this.state.posts;
 
-    const editBtn = (person) => {
+    const editBtn = (post) => {
       this.setState({
-        title: "",
-        body: "",
-        id: "",
+        title: post.title,
+        body: post.body,
+        id: post.id,
       });
     };
 
@@ -34,52 +38,63 @@ export default class TableData extends Component {
     };
 
     const btnUpdate = () => {
-      let editPost = tempPosts.find((post) => post.id === this.state.postId);
+      const editPost = tempPosts.find((post) => post.id === this.state.id);
       editPost.title = this.state.title;
       editPost.body = this.state.body;
       this.setState({ posts: tempPosts });
     };
 
+    const onChangeInputTitle = (e)=>{
+      this.setState({title: e.target.value})
+    }
+    const onChangeInputBody = (e)=>{
+      this.setState({body: e.target.value})
+    }
+
     return (
       <div>
-        <textarea type="text" value={this.state.title}/>
-        <textarea type="text" value={this.state.body}/>
+        <input onChange={onChangeInputTitle} type="text" value={this.state.title} />
+        <input onChange={onChangeInputBody} type="text" value={this.state.body} />
+        <button onClick={btnUpdate}>Update</button>
         <table>
-          <tr>
-            <th>userId</th>
-            <th>id</th>
-            <th>title</th>
-            <th>body</th>
-            <th></th>
-            <th></th>
-          </tr>
-
+          <thead>
+            <tr>
+              <th>userId</th>
+              <th>id</th>
+              <th>title</th>
+              <th>body</th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
           {posts.map((post, i) => {
             return post.id > 5 ? null : (
-              <tr>
-                <td>{post.userId}</td>
-                <td>{post.id}</td>
-                <td>{post.title}</td>
-                <td>{post.body}</td>
-                <td>
-                  <button
-                    onClick={() => {
-                      editBtn(i);
-                    }}
-                  >
-                    edit
-                  </button>
-                </td>
-                <td>
-                  <button
-                    onClick={() => {
-                      deleteBtn(i);
-                    }}
-                  >
-                    delete
-                  </button>
-                </td>
-              </tr>
+              <tbody key={post.id}>
+                <tr>
+                  <td>{post.userId}</td>
+                  <td>{post.id}</td>
+                  <td>{post.title}</td>
+                  <td>{post.body}</td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        editBtn(post);
+                      }}
+                    >
+                      Edit
+                    </button>
+                  </td>
+                  <td>
+                    <button
+                      onClick={() => {
+                        deleteBtn(i);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
             );
           })}
         </table>
