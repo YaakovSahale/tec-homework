@@ -1,10 +1,12 @@
 import './App.css';
-import TableData from './components/TableData';
+// import TableData from './components/TableData';
+import Loto from './components/Loto/Loto.js';
 
 function App() {
   return (
     <div className="App">
-      <TableData/>
+      <Loto/>
+      {/* <TableData/> */}
     </div>
   );
 }
