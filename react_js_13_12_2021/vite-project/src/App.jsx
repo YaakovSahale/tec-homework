@@ -81,7 +81,6 @@ export default class App extends Component {
   };
 
   deleteBook = (i) => {
-    console.log("deleted");
     const tempBooks = [...this.state.books];
     tempBooks.splice(i, 1);
     this.setState({ books: tempBooks });
