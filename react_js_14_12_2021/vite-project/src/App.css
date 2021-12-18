@@ -15,8 +15,8 @@
 .vacationContainer {
   background-color: burlywood;
   border-radius: 50px;
-  padding: 1%;
-  width: 60vw;
+  padding: 2%;
+  width: 25vw;
   height: auto;
 }
 
@@ -32,9 +32,13 @@ form {
 }
 
 .listBody {
-  width: 50vw;
+  width: 20vw;
   height: 35vh;
   margin-left: 20%;
+}
+
+li{
+  text-decoration-color:red
 }
 
 .buttons {
@@ -43,5 +47,7 @@ form {
 }
 
 button,.addVacation {
-  padding: 1% 2%;
+  border: none;
+  padding: 2% 3%;
+  border-radius: 12px;
 }
