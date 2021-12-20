@@ -10,9 +10,9 @@ function App() {
   return (
     <div className="App">
       {/* <Reddit /> */}
-      {/* <RedditParams input={"python"}/> */}
-      {flag ? <Unmount /> : null}
-      <button onClick={()=> setFlag(!flag)}>click</button>
+      <RedditParams input={"python"}/>
+      {/* {flag ? <Unmount /> : null}
+      <button onClick={()=> setFlag(!flag)}>click</button> */}
     </div>
   );
 }

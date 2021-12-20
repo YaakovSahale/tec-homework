@@ -4,7 +4,7 @@ function RedditParams({input}) {
   const [title, setTitle] = useState([])
 
   const getData = () => {
-    fetch('https://www.reddit.com/r/'+input+'.json')
+    fetch(`https://www.reddit.com/r/${input}.json`)
       .then((res) => res.json())
       .then((data) => setTitle(data.data.children))
       .catch((err)=>{console.error(err);})
