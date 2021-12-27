@@ -3,9 +3,9 @@ import React, { useRef, useState } from "react";
 const UserForm = () => {
   const [isDisabled, seTisDisabled] = useState(true);
 
-  const nameRef = useRef();
-  const emailRef = useRef();
-  const pswRef = useRef();
+  const nameRef = useRef(null);
+  const emailRef = useRef(null);
+  const pswRef = useRef(null);
 
   const isValid = () => {
     return (

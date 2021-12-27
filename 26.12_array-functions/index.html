@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const sum = (arr) => {
+        let sum = 0;
+        for (let index = 0; index < arr.length; index++) {
+          sum += arr[index];
+        }
+        return sum;
+      };
+
+      const multiplication = (arr) => {
+        let multi = 1;
+        for (let index = 0; index < arr.length; index++) {
+          multi *= arr[index];
+        }
+        return multi;
+      };
+
+      const sumOfDigits = (number) => {
+        let currentDigit = 0;
+        let sum = 0;
+        while (number > 0) {
+          currentDigit = number % 10;
+          sum += currentDigit;
+          number = (number - currentDigit) / 10;
+        }
+        return sum;
+      };
+
+      const ageArray = [28, 12, 3, 4, 58];
+      let min = ageArray[0];
+      let max = ageArray[0];
+      for (let index = 1; index < ageArray.length; index++) {
+        if (min > ageArray[index]) {
+          min = ageArray[index];
+        }
+        if (max < ageArray[index]) {
+          max = ageArray[index];
+        }
+      }
+
+      const ageSum = sum(ageArray);
+      const ageAverege = ageSum / ageArray.length;
+
+      console.log({ min });
+      console.log({ max });
+      console.log({ ageSum });
+      console.log({ ageAverege });
+
+      const numberArray = new Array();
+      let i = 0, userInput;
+      while (i < 3) {
+        userInput = Number(prompt("Please enter a number: "));
+        if (userInput) {
+          numberArray.push(userInput);
+          i++;
+        }
+      }
+
+      const numberArraySum = sum(numberArray);
+      const numberArrayAverege = numberArraySum / numberArray.length;
+      console.log({numberArraySum});
+      console.log({numberArrayAverege});
+
+      for (let index = 0; index < numberArray.length; index++) {
+          if (numberArray[index] % 2) {
+            console.log(`${numberArray[index]} is odd`); 
+          }
+          else{
+              console.log(`${numberArray[index]} is even`);
+          }
+          
+      }
+      console.log(numberArray);
+    </script>
+  </body>
+</html>
