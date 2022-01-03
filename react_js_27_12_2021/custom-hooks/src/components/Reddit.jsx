@@ -2,8 +2,9 @@ import useFetch from "../hooks/useFetch";
 
 const Reddit = () => {
   const [data, isLoading, error] = useFetch(
-    `https://www.reddit.com/r/python.json`
+    `https://www.reddit.com/r/reactjs.json`
   );
+
   return (
     <div>
       {isLoading ? <div className="loader">loading</div> : null}

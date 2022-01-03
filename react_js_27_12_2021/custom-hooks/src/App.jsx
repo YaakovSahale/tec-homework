@@ -7,9 +7,9 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Reddit/> */}
+      <Reddit/>
       {/* <PerformanceProblem/> */}
-      <Parent/>
+      {/* <Parent/> */}
     </div>
   )
 }
